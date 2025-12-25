@@ -1,0 +1,56 @@
+﻿<Window
+    Height="450"
+    Title="Update Weather"
+    Width="800"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d"
+    x:Class="lab2_17.UpdateWeatherPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:lab2_17"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Window.Resources>
+        <ResourceDictionary Source="../Styles.xaml" />
+    </Window.Resources>
+    <Grid>
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="400">
+
+            <TextBlock
+                FontSize="24"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Text="{Binding CityName}" />
+            <TextBlock Text="Температура (°C)" />
+            <TextBox
+                Height="40"
+                HorizontalAlignment="Stretch"
+                Margin="0,0,0,10"
+                Text="{Binding Temperature}"
+                VerticalAlignment="Top" />
+            <ComboBox
+                Height="40"
+                HorizontalAlignment="Stretch"
+                Margin="0,0,0,10"
+                Name="WeatherConditionComboBox"
+                SelectedItem="{Binding WeatherDescription}"
+                VerticalAlignment="Top">
+                <ComboBoxItem Content="Сонячно" />
+                <ComboBoxItem Content="Вітряно" />
+                <ComboBoxItem Content="Хмарно" />
+                <ComboBoxItem Content="Дощ" />
+                <ComboBoxItem Content="Сніг" />
+            </ComboBox>
+
+            <Button
+                Click="SubmitButton_Click"
+                Content="Оновити дані"
+                Height="40"
+                HorizontalAlignment="Center"
+                Width="200" />
+        </StackPanel>
+    </Grid>
+</Window>
